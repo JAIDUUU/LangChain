@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "length_input",
+        "style_input",
+        "topic_input"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\nPlease write a paragraph about \"{topic_input}\"\nwith the following specifications:\n\nExplanation Style: {style_input}\nExplanation Length: {length_input}\n\nFocus on the importance, benefits, and challenges\nof the topic in the gaming community.\n",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
