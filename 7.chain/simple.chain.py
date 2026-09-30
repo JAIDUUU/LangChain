@@ -5,16 +5,15 @@ from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
 
-promt_tempplate=PromptTemplate(
-    template="genrate 5 intresting facts about {topic}",
-    input_variables=['topic']
+prompt_template = PromptTemplate(
+    template="Generate 5 interesting facts about {topic}",
+    input_variables=["topic"]
 )
 
-model=ChatGoogleGenerativeAI()
+model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
+parser = StrOutputParser()
 
-parser=StrOutputParser()
-
-chain=promt_tempplate | model | parser
-
-result=chain.revoke({'topic':'footbal'})
+chain = prompt_template | model | parser
+result = chain.invoke({"topic": "football"})
+print(result)
